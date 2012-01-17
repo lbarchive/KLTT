@@ -1,0 +1,30 @@
+Keep Last Two Tabs
+==================
+
+*Keep Last Two Tabs* or **KLTT** for short is a Google Chrome/Chromium extension keep last two tabs to prevent Chrome quits when last tab is closed.
+
+It was created in late 2009 on Google Code and moved to GitHub in early 2012 for better maintenance purpose.
+
+## Installation
+
+Please go to its [Chrome Web Store page][webstore].
+
+[webstore]: https://chrome.google.com/webstore/detail/fcnmaiiahjldikaollhjobhchdbhfhgf
+
+## How It Works
+
+This is a silly extension. It's made to prevent Chrome quits when you close last tab. But it's not really work as you may expect. It keeps you Chrome has at least two tabs. Because *intercepting* last tab closing is not possible without injecting code in every webpage, therefore this is one possible way to get around.
+
+## Support
+
+TBA
+
+## Help Needed and Donation
+
+TBA
+
+## License
+
+KLTT is licensed under the MIT License.
+
+    Copyright (c) 2009, 2010, 2012 Yu-Jie Lin
