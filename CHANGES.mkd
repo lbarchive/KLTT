@@ -1,0 +1,8 @@
+CHANGES
+=======
+
+## Version 0.4 (2012-01-17T18:08:45Z)
+
+ * Move project to GitHub
+ * Fix multiple tabs opened when use Close Tabs to The Right
+ * Change style of options page

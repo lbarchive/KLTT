@@ -1,5 +1,20 @@
 <html>
-<head><title>Keep Last Two Tabs Options</title>
+<head>
+  <title>Keep Last Two Tabs Options</title>
+  <link href='http://fonts.googleapis.com/css?family=Jura|Arapey' rel='stylesheet' type='text/css'>
+<style>
+body {
+  font-family: 'Arapey', serif;
+  font-size: 16px;
+}
+h1 {
+  font-family: 'Jura', sans-serif;
+}
+button {
+  font-family: 'Arapey', serif;
+  font-size: 1.1em;
+}
+</style>
 <script type="text/javascript">
 
 // Saves options to localStorage.
@@ -39,14 +54,23 @@ function restore_options() {
 </script>
 </head>
 <body onload="restore_options()">
+<h1>Keep Last Two Tabs: Options</h1>
 
 <div>
-Select new created tab? <input type="checkbox" id="select_new_created" name="select_new_created" value="true"/>
+<label>
+<input type="checkbox" id="select_new_created" name="select_new_created" value="true"/>
+Automatically select newly created tab.
+</label>
 </div>
 
 <div>
-Close tabs if they are New Tab pages (chrome://newtab/) after opening a new tab? <input type=checkbox id="close_second_tab" name="close_second_tab" value="true"/>
+<label>
+<input type=checkbox id="close_second_tab" name="close_second_tab" value="true"/>
+Automatically close <a href="chrome://newtab/">New Tab</a> tabs after opening a new tab.
+</label>
 </div>
+
+<hr/>
 
 <div>
 <button onclick="save_options()">Save</button> <span id="status"></span>

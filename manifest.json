@@ -1,7 +1,10 @@
 {
   "name": "Keep Last Two Tabs",
-  "version": "0.3.1",
+  "version": "0.4",
   "description": "This extension keep last two tabs to prevent Chrome quits when last tab is closed.",
+  "icons": { "16": "icon16.png",
+             "48": "icon48.png",
+            "128": "icon128.png" },
   "background_page": "background.html",
   "options_page": "options.html",
   "permissions": ["tabs"]

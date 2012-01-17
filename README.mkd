@@ -15,14 +15,6 @@ Please go to its [Chrome Web Store page][webstore].
 
 This is a silly extension. It's made to prevent Chrome quits when you close last tab. But it's not really work as you may expect. It keeps you Chrome has at least two tabs. Because *intercepting* last tab closing is not possible without injecting code in every webpage, therefore this is one possible way to get around.
 
-## Support
-
-TBA
-
-## Help Needed and Donation
-
-TBA
-
 ## License
 
 KLTT is licensed under the MIT License.
