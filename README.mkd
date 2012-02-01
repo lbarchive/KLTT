@@ -20,3 +20,8 @@ This is a silly extension. It's made to prevent Chrome quits when you close last
 KLTT is licensed under the MIT License.
 
     Copyright (c) 2009, 2010, 2012 Yu-Jie Lin
+    
+## update
+sorry, I'm new to this and can't figure everything out. I don't know how to upload new screenshots.
+there is also a small problem. if you unpin a tab, what should happen is a new pinned tab appears in it's place.
+what happens is nothing. I haven't bothered to code this yet, it's not a glitch, I just haven't tooken the time to put new code in.
