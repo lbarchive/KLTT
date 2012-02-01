@@ -31,6 +31,12 @@ function save_options() {
   else
     localStorage["close_second_tab"] = 0;
 
+  var pinned = document.getElementById("pinned");
+  if (pinned.checked)
+    localStorage["pinned"] = 1;
+  else
+    localStorage["pinned"] = 0;
+
   // Update status to let user know options were saved.
   var status = document.getElementById("status");
   status.innerHTML = "Options Saved.";
@@ -43,11 +49,15 @@ function save_options() {
 function restore_options() {
   var select_new_created = localStorage["select_new_created"];
   if (select_new_created == 1) {
-  	document.getElementById("select_new_created").checked = true;
+    document.getElementById("select_new_created").checked = true;
   }
   var close_second_tab = localStorage["close_second_tab"];
   if (close_second_tab == 1) {
   	document.getElementById("close_second_tab").checked = true;
+  }
+  var pinned = localStorage["pinned"];
+  if (pinned == 1) {
+  	document.getElementById("pinned").checked = true;
   }
 }
 
@@ -67,6 +77,13 @@ Automatically select newly created tab.
 <label>
 <input type=checkbox id="close_second_tab" name="close_second_tab" value="true"/>
 Automatically close <a href="chrome://newtab/">New Tab</a> tabs after opening a new tab.
+</label>
+</div>
+
+<div>
+<label>
+<input type=checkbox id="pinned" name="pinned" value="true"/>
+open the newly created tab so it's pinned unless there is already a pinned tab
 </label>
 </div>
 
