@@ -5,6 +5,7 @@ var reopen_tab_id = null;
 var creating_tab = false;
 function keep_two() {
   chrome.windows.getAll({populate: true}, function(windows){
+    var is_pinned = localStorage["pinned"];
     var tab_count = 0;
     for (var i=0; i<windows.length; i++) {
       var w = windows[i];
@@ -14,7 +15,7 @@ function keep_two() {
       creating_tab = true;
       var select_new_created = localStorage["select_new_created"];
       select_new_created = (select_new_created == 1);
-      chrome.tabs.create({selected: select_new_created}, function(tab){
+      chrome.tabs.create({selected: select_new_created, pinned:(is_pinned==1 && w.tabs[0].pinned==false)}, function(tab){
         // save this tab id in case of Close Tabs to The Right.
         // Chrome will close this tab if that is the case even it's just being
         // added.
@@ -46,14 +47,14 @@ chrome.tabs.onRemoved.addListener(function(tabId) {
   }
   keep_two();
   });
-chrome.tabs.onCreated.addListener(function(tab) {
+chrome.tabs.onCreated.addListener(function listener(tab) {
   if (tab.id != reopen_tab_id)
     reopen_tab_id = null;
   var close_second_tab = localStorage["close_second_tab"];
   close_second_tab = (close_second_tab == 1);
   if (close_second_tab)
     close_second(tab);
-  });
+});
 </script>
 </head>
 </html>
