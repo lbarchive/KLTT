@@ -3,6 +3,10 @@ CHANGES
 
 ## Development
 
+
+
+## Version 0.4.1 (2012-02-02T12:21:35Z)
+
  * Add auto_pin option (by QxQ)
 
 ## Version 0.4 (2012-01-17T18:08:45Z)
