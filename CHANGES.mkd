@@ -1,6 +1,10 @@
 CHANGES
 =======
 
+## Development
+
+ * Add auto_pin option (by QxQ)
+
 ## Version 0.4 (2012-01-17T18:08:45Z)
 
  * Move project to GitHub

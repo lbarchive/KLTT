@@ -31,11 +31,11 @@ function save_options() {
   else
     localStorage["close_second_tab"] = 0;
 
-  var pinned = document.getElementById("pinned");
-  if (pinned.checked)
-    localStorage["pinned"] = 1;
+  var auto_pin = document.getElementById("auto_pin");
+  if (auto_pin.checked)
+    localStorage["auto_pin"] = 1;
   else
-    localStorage["pinned"] = 0;
+    localStorage["auto_pin"] = 0;
 
   // Update status to let user know options were saved.
   var status = document.getElementById("status");
@@ -55,9 +55,9 @@ function restore_options() {
   if (close_second_tab == 1) {
   	document.getElementById("close_second_tab").checked = true;
   }
-  var pinned = localStorage["pinned"];
-  if (pinned == 1) {
-  	document.getElementById("pinned").checked = true;
+  var auto_pin = localStorage["auto_pin"];
+  if (auto_pin == 1) {
+  	document.getElementById("auto_pin").checked = true;
   }
 }
 
@@ -75,15 +75,15 @@ Automatically select newly created tab.
 
 <div>
 <label>
-<input type=checkbox id="close_second_tab" name="close_second_tab" value="true"/>
-Automatically close <a href="chrome://newtab/">New Tab</a> tabs after opening a new tab.
+<input type="checkbox" id="auto_pin" name="auto_pin" value="true"/>
+Automatically pin newly created tab when there is no pinned tabs. (<a href="https://github.com/livibetter/KLTT/pull/2#issuecomment-3776897">Feedback</a>)
 </label>
 </div>
 
 <div>
 <label>
-<input type=checkbox id="pinned" name="pinned" value="true"/>
-open the newly created tab so it's pinned unless there is already a pinned tab
+<input type=checkbox id="close_second_tab" name="close_second_tab" value="true"/>
+Automatically close <a href="chrome://newtab/">New Tab</a> tabs after opening a new tab.
 </label>
 </div>
 
