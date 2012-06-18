@@ -3,7 +3,9 @@ CHANGES
 
 ## Development
 
+## Version 0.5 
 
+ * Add opening custom page instead of new tab (#3)
 
 ## Version 0.4.1 (2012-02-02T12:21:35Z)
 

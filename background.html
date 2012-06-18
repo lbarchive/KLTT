@@ -14,10 +14,13 @@ function keep_two() {
       creating_tab = true;
       var select_new_created = localStorage["select_new_created"] == 1;
       var auto_pin = localStorage["auto_pin"] == 1;
-      chrome.tabs.create({
-          selected: select_new_created,
-          pinned: (auto_pin && !w.tabs[0].pinned)
-        }, function(tab){
+      var create_options = {
+        selected: select_new_created,
+        pinned: (auto_pin && !w.tabs[0].pinned)
+        };
+      if (localStorage["open_custom_page"] == 1)
+        create_options['url'] = localStorage["custom_page_url"];
+      chrome.tabs.create(create_options, function(tab){
           // save this tab id in case of Close Tabs to The Right.
           // Chrome will close this tab if that is the case even it's just being
           // added.

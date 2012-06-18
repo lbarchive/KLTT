@@ -37,6 +37,13 @@ function save_options() {
   else
     localStorage["auto_pin"] = 0;
 
+  var open_custom_page = document.getElementById("open_custom_page");
+  if (open_custom_page.checked)
+    localStorage["open_custom_page"] = 1;
+  else
+    localStorage["open_custom_page"] = 0;
+  localStorage["custom_page_url"] = document.getElementById("custom_page_url").value;
+
   // Update status to let user know options were saved.
   var status = document.getElementById("status");
   status.innerHTML = "Options Saved.";
@@ -59,6 +66,11 @@ function restore_options() {
   if (auto_pin == 1) {
   	document.getElementById("auto_pin").checked = true;
   }
+  var open_custom_page = localStorage["open_custom_page"];
+  if (open_custom_page == 1) {
+  	document.getElementById("open_custom_page").checked = true;
+  }
+  document.getElementById("custom_page_url").value = localStorage["custom_page_url"] || '';
 }
 
 </script>
@@ -84,6 +96,14 @@ Automatically pin newly created tab when there is no pinned tabs. (<a href="http
 <label>
 <input type=checkbox id="close_second_tab" name="close_second_tab" value="true"/>
 Automatically close <a href="chrome://newtab/">New Tab</a> tabs after opening a new tab.
+</label>
+</div>
+
+<div>
+<label>
+<input type="checkbox" id="open_custom_page" name="open_custom_page" value="true"/>
+Open custom page
+<input type="input" id="custom_page_url" name="custom_page_url"/>
 </label>
 </div>
 
