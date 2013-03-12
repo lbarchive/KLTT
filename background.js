@@ -32,8 +32,6 @@ function keep_two() {
 		if (tab_count == 1 && !creating_tab) {
 			creating_tab = true;
 			
-			alert(select_new_created + " " + auto_pin + " " + open_custom_page + " " + custom_page_url);
-			
 			var create_options = {
 				selected: select_new_created,
 				pinned: (auto_pin && !w.tabs[0].pinned)
