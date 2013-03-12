@@ -5,7 +5,13 @@
   "icons": { "16": "icon16.png",
              "48": "icon48.png",
             "128": "icon128.png" },
-  "background_page": "background.html",
+  "background": {
+      "page": "background.html"
+   },
   "options_page": "options.html",
-  "permissions": ["tabs"]
+  "permissions": [
+	"tabs",
+	"storage"
+	],
+  "manifest_version": 2
 }

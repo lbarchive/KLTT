@@ -1,117 +1,67 @@
 <html>
-<head>
-  <title>Keep Last Two Tabs Options</title>
-  <link href='http://fonts.googleapis.com/css?family=Jura|Arapey' rel='stylesheet' type='text/css'>
-<style>
-body {
-  font-family: 'Arapey', serif;
-  font-size: 16px;
-}
-h1 {
-  font-family: 'Jura', sans-serif;
-}
-button {
-  font-family: 'Arapey', serif;
-  font-size: 1.1em;
-}
-</style>
-<script type="text/javascript">
+	<head>
+		<title>Keep Last Two Tabs Options</title>
+		<link href='http://fonts.googleapis.com/css?family=Jura|Arapey' rel='stylesheet' type='text/css'>
+		<style>
+			body {
+			  font-family: 'Arapey', serif;
+			  font-size: 16px;
+			}
+			h1 {
+			  font-family: 'Jura', sans-serif;
+			}
+			button {
+			  font-family: 'Arapey', serif;
+			  font-size: 1.1em;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<h1>Keep Last Two Tabs: Options</h1>
 
-// Saves options to localStorage.
-function save_options() {
-  var select_new_created = document.getElementById("select_new_created");
-  if (select_new_created.checked)
-    localStorage["select_new_created"] = 1;
-  else
-    localStorage["select_new_created"] = 0;
+		<div>
+			<label>
+				<input type="checkbox" id="select_new_created" name="select_new_created" value="true"/>
+				Automatically select newly created tab.
+			</label>
+		</div>
 
-  var close_second_tab = document.getElementById("close_second_tab");
-  if (close_second_tab.checked)
-    localStorage["close_second_tab"] = 1;
-  else
-    localStorage["close_second_tab"] = 0;
+		<div>
+			<label>
+				<input type="checkbox" id="auto_pin" name="auto_pin" value="true"/>
+				Automatically pin newly created tab when there is no pinned tabs. (<a href="https://github.com/livibetter/KLTT/pull/2#issuecomment-3776897">Feedback</a>)
+			</label>
+		</div>
 
-  var auto_pin = document.getElementById("auto_pin");
-  if (auto_pin.checked)
-    localStorage["auto_pin"] = 1;
-  else
-    localStorage["auto_pin"] = 0;
+		<div>
+			<label>
+				<input type=checkbox id="close_second_tab" name="close_second_tab" value="true"/>
+				Automatically close <a href="chrome://newtab/">New Tab</a> tabs after opening a new tab.
+			</label>
+		</div>
 
-  var open_custom_page = document.getElementById("open_custom_page");
-  if (open_custom_page.checked)
-    localStorage["open_custom_page"] = 1;
-  else
-    localStorage["open_custom_page"] = 0;
-  localStorage["custom_page_url"] = document.getElementById("custom_page_url").value;
+		<div>
+			<label>
+				<input type="checkbox" id="open_custom_page" name="open_custom_page" value="true"/>
+				Open custom page
+				<input type="input" id="custom_page_url" name="custom_page_url"/>
+			</label>
+		</div>
 
-  // Update status to let user know options were saved.
-  var status = document.getElementById("status");
-  status.innerHTML = "Options Saved.";
-  setTimeout(function() {
-    status.innerHTML = "";
-  }, 750);
-}
+		<hr/>
 
-// Restores select box state to saved value from localStorage.
-function restore_options() {
-  var select_new_created = localStorage["select_new_created"];
-  if (select_new_created == 1) {
-    document.getElementById("select_new_created").checked = true;
-  }
-  var close_second_tab = localStorage["close_second_tab"];
-  if (close_second_tab == 1) {
-  	document.getElementById("close_second_tab").checked = true;
-  }
-  var auto_pin = localStorage["auto_pin"];
-  if (auto_pin == 1) {
-  	document.getElementById("auto_pin").checked = true;
-  }
-  var open_custom_page = localStorage["open_custom_page"];
-  if (open_custom_page == 1) {
-  	document.getElementById("open_custom_page").checked = true;
-  }
-  document.getElementById("custom_page_url").value = localStorage["custom_page_url"] || '';
-}
+		<div>
+			<!-- <button onclick="save_options()">Save</button> <span id="status"></span> -->
+			<br />
+			<button id="save">Save</button>
+			
+			<br />
+			<div id="status"></div>
+		</div>
 
-</script>
-</head>
-<body onload="restore_options()">
-<h1>Keep Last Two Tabs: Options</h1>
+		<script src="options.js"></script>
 
-<div>
-<label>
-<input type="checkbox" id="select_new_created" name="select_new_created" value="true"/>
-Automatically select newly created tab.
-</label>
-</div>
-
-<div>
-<label>
-<input type="checkbox" id="auto_pin" name="auto_pin" value="true"/>
-Automatically pin newly created tab when there is no pinned tabs. (<a href="https://github.com/livibetter/KLTT/pull/2#issuecomment-3776897">Feedback</a>)
-</label>
-</div>
-
-<div>
-<label>
-<input type=checkbox id="close_second_tab" name="close_second_tab" value="true"/>
-Automatically close <a href="chrome://newtab/">New Tab</a> tabs after opening a new tab.
-</label>
-</div>
-
-<div>
-<label>
-<input type="checkbox" id="open_custom_page" name="open_custom_page" value="true"/>
-Open custom page
-<input type="input" id="custom_page_url" name="custom_page_url"/>
-</label>
-</div>
-
-<hr/>
-
-<div>
-<button onclick="save_options()">Save</button> <span id="status"></span>
-</div>
-</body>
+	</body>
 </html>
 <!-- vim: set sw=2 ts=2 et: -->
