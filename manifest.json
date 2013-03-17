@@ -6,8 +6,8 @@
              "48": "icon48.png",
             "128": "icon128.png" },
   "background": {
-      "page": "background.html"
-   },
+    "scripts": ["background.js"]
+  },
   "options_page": "options.html",
   "permissions": [
 	"tabs",
