@@ -22,11 +22,11 @@ function loadOps() {
 	chrome.storage.sync.get(["select_new_created", "close_second_tab", "auto_pin", "open_custom_page", "custom_page_url"], 
 		function(items) {
 			
-			document.getElementById("select_new_created").checked = items["select_new_created"];
-			document.getElementById("close_second_tab").checked = items["close_second_tab"];
-			document.getElementById("auto_pin").checked = items["auto_pin"];
-			document.getElementById("open_custom_page").checked = items["open_custom_page"];
-			document.getElementById("custom_page_url").value = items["custom_page_url"];
+			document.getElementById("select_new_created").checked = !!items["select_new_created"];
+			document.getElementById("close_second_tab").checked = !!items["close_second_tab"];
+			document.getElementById("auto_pin").checked = !!items["auto_pin"];
+			document.getElementById("open_custom_page").checked = !!items["open_custom_page"];
+			document.getElementById("custom_page_url").value = items["custom_page_url"] || '';
 			
 		}
 	);
