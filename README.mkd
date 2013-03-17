@@ -15,8 +15,16 @@ Please go to its [Chrome Web Store page][webstore].
 
 This is a silly extension. It's made to prevent Chrome quits when you close last tab. But it's not really work as you may expect. It keeps you Chrome has at least two tabs. Because *intercepting* last tab closing is not possible without injecting code in every webpage, therefore this is one possible way to get around.
 
+## Options
+
+* Automatically select newly created tab.
+* Automatically pin newly created tab when there is no pinned tabs. (v0.4.1+)
+* Automatically close New Tab tabs after opening a new tab.
+* Open custom page. (v0.5)
+* Support Chrome Sync. (v0.6)
+
 ## License
 
 KLTT is licensed under the MIT License.
 
-    Copyright (c) 2009, 2010, 2012 Yu-Jie Lin
+    Copyright (c) 2009-2010, 2012-2013 Yu-Jie Lin

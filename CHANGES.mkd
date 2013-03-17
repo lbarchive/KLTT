@@ -3,16 +3,20 @@ CHANGES
 
 ## Development
 
+## Version 0.6 (2013-03-17T23:20:12Z)
+
+* Support Chrome Sync (by theborg3of5)
+
 ## Version 0.5 
 
- * Add opening custom page instead of new tab (#3)
+* Add opening custom page instead of new tab (#3)
 
 ## Version 0.4.1 (2012-02-02T12:21:35Z)
 
- * Add auto_pin option (by QxQ)
+* Add `auto_pin` option (by QxQ)
 
 ## Version 0.4 (2012-01-17T18:08:45Z)
 
- * Move project to GitHub
- * Fix multiple tabs opened when use Close Tabs to The Right
- * Change style of options page
+* Move project to GitHub
+* Fix multiple tabs opened when use Close Tabs to The Right
+* Change style of options page
